@@ -3,7 +3,7 @@ import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   History,
   User,
@@ -33,7 +33,7 @@ const menuItems = [
   { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
 ];
 
-const Sidebar = ({ isOpen, toggleSidebar }:any) => {
+const Sidebar = ({ isOpen, toggleSidebar }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -83,21 +83,23 @@ const TabNavigation = () => {
   const location = useLocation();
 
   return (
-    <Tabs defaultValue={location.pathname} className="w-full">
-      <TabsList className="grid grid-cols-3 gap-2">
-        {menuItems.map((item) => (
-          <TabsTrigger
-            key={item.name}
-            value={item.path}
-            onClick={() => navigate(item.path)}
-            className="flex items-center justify-center"
-          >
-            <item.icon className="h-4 w-4 mr-2" />
-            <span className="sr-only">{item.name}</span>
-          </TabsTrigger>
-        ))}
-      </TabsList>
-    </Tabs>
+    <div className="w-full bg-white shadow-md">
+      <ScrollArea className="w-full whitespace-nowrap">
+        <div className="flex p-2">
+          {menuItems.map((item) => (
+            <Button
+              key={item.name}
+              variant={location.pathname === item.path ? "default" : "ghost"}
+              className="px-4 py-2 mx-1"
+              onClick={() => navigate(item.path)}
+            >
+              {item.name}
+            </Button>
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+    </div>
   );
 };
 
@@ -105,6 +107,8 @@ const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -120,6 +124,12 @@ const Dashboard = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (location.pathname === '/dashboard' || location.pathname === '/dashboard/') {
+      navigate('/dashboard/profile');
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <div className="flex w-screen h-screen bg-white">
@@ -141,7 +151,7 @@ const Dashboard = () => {
         </header>
         <main className="flex flex-col overflow-x-hidden overflow-y-auto bg-white">
           {isSmallScreen && <TabNavigation />}
-          <div className="w-full h-full px-8 py-4">
+          <div className="w-full h-full px-4 py-4 sm:px-8">
             <Outlet />
           </div>
         </main>
