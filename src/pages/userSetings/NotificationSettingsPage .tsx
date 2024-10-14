@@ -5,9 +5,9 @@ import { Label } from '@/components/ui/label'
 
 const NotificationSettingsPage = () => {
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="w-full px-4 ">
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-sm max-w-2xl mx-auto"
+        className="bg-white p-8 rounded-lg shadow-sm w-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
