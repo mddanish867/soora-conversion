@@ -12,7 +12,7 @@ const ProfileSettingsPage = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="w-full max-w-2xl mx-auto">
+      <Card className="w-full mx-auto">
         <CardHeader>
           <CardTitle>User Profile</CardTitle>
           <CardDescription>Manage your account details and preferences</CardDescription>

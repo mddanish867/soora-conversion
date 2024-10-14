@@ -28,11 +28,10 @@ const Sidebar = ({
   const location = useLocation();
 
   const menuItems = [
-    { icon: History, name: "History", path: "/dashboard/history" },
     { icon: User, name: "Profile", path: "/dashboard/profile" },
+    { icon: History, name: "History", path: "/dashboard/history" },
     { icon: Bell, name: "Notifications", path: "/dashboard/notifications" },
     { icon: Shield, name: "Security", path: "/dashboard/security" },
-    { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
     {
       icon: FileText,
       name: "Conversion Status",
@@ -63,7 +62,15 @@ const Sidebar = ({
       name: "Document Comment",
       path: "/dashboard/document-comment",
     },
+    { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
   ];
+
+  // Default to the Profile path if the current location is the root dashboard
+  useEffect(() => {
+    if (location.pathname === '/dashboard') {
+      navigate('/dashboard/profile');
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <motion.div
@@ -87,7 +94,7 @@ const Sidebar = ({
           <Button
             key={item.name}
             variant="ghost"
-            className={`w-full justify-start px-4 py-2 text-gray-950 hover:bg-gray-100 ${
+            className={`w-52 justify-start px-4 py-2 text-gray-950 hover:bg-gray-100 ${
               location.pathname === item.path ? "bg-gray-100" : ""
             }`}
             onClick={() => {
@@ -126,10 +133,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex w-screen h-screen bg-white">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="flex-1 flex flex-col overflow-hidden lg:ml-64">
-        <header className="bg-white z-10 border-b">
+      <div className="flex flex-col overflow-hidden w-full">
+        <header className="bg-white z-10 ">
           <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <Button
               variant="ghost"
@@ -141,7 +148,7 @@ const Dashboard = () => {
             </Button>
           </div>
         </header>
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+        <main className="flex overflow-x-hidden overflow-y-auto bg-white">
           <div className="w-full h-full px-8 py-4">
             <Outlet />
           </div>

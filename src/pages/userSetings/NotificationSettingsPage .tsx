@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label'
 
 const NotificationSettingsPage = () => {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 ">
       <motion.div
         className="bg-white p-8 rounded-lg shadow-sm max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -50 }}

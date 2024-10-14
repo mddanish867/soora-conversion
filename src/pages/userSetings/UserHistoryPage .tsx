@@ -10,9 +10,9 @@ const UserHistoryPage = () => {
   ];
 
   return (
-    <div className="w-full px-8 py-16">
+    <div className="w-full h-full"> {/* Use full width and height */}
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-sm w-full"
+        className="bg-white p-8 rounded-lg shadow-sm w-full h-full" // Full width and height
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
