@@ -15,18 +15,20 @@ const PremiumFeaturesShowcase = () => {
   ]
 
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="w-full px-4"> {/* Full-width container for small screens */}
       <motion.div
-        className="bg-white p-8 rounded-lg "
+        className="bg-white p-8 rounded-lg"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Premium Features</h2>
         <p className="text-center text-gray-600 mb-8">Unlock advanced capabilities with our premium plan</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        {/* Adjust the grid for small devices */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index}>
+            <Card key={index} className="w-full"> {/* Ensure full width of the card */}
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Star className="mr-2 h-5 w-5 text-yellow-400" />
@@ -39,8 +41,10 @@ const PremiumFeaturesShowcase = () => {
             </Card>
           ))}
         </div>
-        <div className="mt-12 text-center">
-          <Card className="inline-block">
+
+        {/* Pricing section */}
+        <div className="mt-12 text-center w-full">
+          <Card className="inline-block w-full max-w-md"> {/* Ensure full width on mobile, with max width */}
             <CardHeader>
               <CardTitle>
                 <Badge variant="secondary" className="mb-2">Most Popular</Badge>
@@ -61,7 +65,7 @@ const PremiumFeaturesShowcase = () => {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button  className="w-full">Upgrade to Premium</Button>
+              <Button className="w-full">Upgrade to Premium</Button>
             </CardFooter>
           </Card>
         </div>

@@ -47,18 +47,18 @@ const DocumentCommentSystem = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="container mx-auto px-4 w-full">
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-sm"
+        className="bg-white p-8 rounded-lg shadow-sm w-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl font-bold mb-6 text-gray-900">Document with Comments</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div className="md:col-span-2 w-full">
             <div 
-              className="bg-gray-100 p-4 rounded-lg min-h-[400px]" 
+              className="bg-gray-100 p-4 rounded-lg min-h-[400px] w-full" 
               onMouseUp={handleTextSelection}
             >
               <p>
@@ -74,7 +74,7 @@ const DocumentCommentSystem = () => {
             </div>
             {showCommentBox && (
               <motion.div 
-                className="mt-4 p-4 bg-blue-100 rounded-lg"
+                className="mt-4 p-4 bg-blue-100 rounded-lg w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -98,7 +98,7 @@ const DocumentCommentSystem = () => {
               </motion.div>
             )}
           </div>
-          <div>
+          <div className="w-full">
             <h3 className="text-xl font-semibold mb-4 flex items-center">
               <MessageSquare className="mr-2 h-5 w-5" /> Comments
             </h3>

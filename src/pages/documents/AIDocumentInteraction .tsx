@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Send, } from 'lucide-react'
+import { Send } from 'lucide-react'
 
 interface Message {
   id: number
@@ -25,12 +25,10 @@ const AIDocumentInteraction = () => {
     const uploadedFile = event.target.files?.[0]
     if (uploadedFile) {
       setFile(uploadedFile)
-      // Simulating document content extraction
       const reader = new FileReader()
       reader.onload = (e) => {
         const content = e.target?.result as string
         setDocumentContent(content)
-        // Simulating AI analysis
         setDocumentAnalysis([
           { key: 'Document Type', value: 'Report' },
           { key: 'Page Count', value: '5' },
@@ -53,7 +51,6 @@ const AIDocumentInteraction = () => {
       }
       setMessages([...messages, newMessage])
       setInput('')
-      // Simulating AI response
       setTimeout(() => {
         const aiResponse: Message = {
           id: messages.length + 2,
@@ -67,16 +64,16 @@ const AIDocumentInteraction = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="container w-full mx-auto px-2 lg:px-4">
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-sm"
+        className="bg-white p-6 rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl font-bold mb-6 text-gray-900">AI Document Interaction</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <Card className="lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+          <Card className="lg:col-span-2 w-full">
             <CardHeader>
               <CardTitle>Document Viewer & Chat</CardTitle>
               <CardDescription>Upload a document and chat with AI about its contents</CardDescription>
@@ -128,7 +125,7 @@ const AIDocumentInteraction = () => {
               </div>
             </CardFooter>
           </Card>
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <CardTitle>Document Analysis</CardTitle>
               <CardDescription>AI-powered insights about your document</CardDescription>
