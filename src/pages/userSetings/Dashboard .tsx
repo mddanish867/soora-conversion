@@ -135,9 +135,9 @@ const Dashboard = () => {
   return (
     <div className="flex w-screen h-screen bg-white">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="flex flex-col overflow-hidden w-full">
-        <header className="bg-white z-10 ">
-          <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
+        <header className="bg-white">
+          
             <Button
               variant="ghost"
               size="icon"
@@ -146,7 +146,7 @@ const Dashboard = () => {
             >
               {!sidebarOpen && <Menu />}
             </Button>
-          </div>
+         
         </header>
         <main className="flex overflow-x-hidden overflow-y-auto bg-white">
           <div className="w-full h-full px-8 py-4">
