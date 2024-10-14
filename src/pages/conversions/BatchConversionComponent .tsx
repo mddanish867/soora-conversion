@@ -36,15 +36,15 @@ const BatchConversionComponent = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-sm"
+        className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-sm w-full max-w-4xl mx-auto"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">Batch Conversion</h2>
-        <div className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900">Batch Conversion</h2>
+        <div className="space-y-4 sm:space-y-6">
           <div>
             <Label htmlFor="file-upload">Upload Files</Label>
             <Input
@@ -68,31 +68,37 @@ const BatchConversionComponent = () => {
               </SelectContent>
             </Select>
           </div>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>File Name</TableHead>
-                <TableHead>Size</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Action</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {files.map((file, index) => (
-                <TableRow key={index}>
-                  <TableCell>{file.name}</TableCell>
-                  <TableCell>{(file.size / 1024 / 1024).toFixed(2)} MB</TableCell>
-                  <TableCell>{file.type}</TableCell>
-                  <TableCell>
-                    <Button variant="ghost" size="sm" onClick={() => removeFile(index)}>
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </TableCell>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-1/3">File Name</TableHead>
+                  <TableHead className="w-1/4">Size</TableHead>
+                  <TableHead className="w-1/4">Type</TableHead>
+                  <TableHead className="w-1/6">Action</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-          <Button onClick={handleConvert} disabled={files.length === 0 || !outputFormat}>
+              </TableHeader>
+              <TableBody>
+                {files.map((file, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="break-all">{file.name}</TableCell>
+                    <TableCell>{(file.size / 1024 / 1024).toFixed(2)} MB</TableCell>
+                    <TableCell>{file.type}</TableCell>
+                    <TableCell>
+                      <Button variant="ghost" size="sm" onClick={() => removeFile(index)}>
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+          <Button 
+            onClick={handleConvert} 
+            disabled={files.length === 0 || !outputFormat}
+            className="w-full sm:w-auto"
+          >
             <Upload className="mr-2 h-4 w-4" /> Convert Files
           </Button>
         </div>
