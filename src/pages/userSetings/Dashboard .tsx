@@ -83,7 +83,7 @@ const TabNavigation = () => {
   const location = useLocation();
 
   return (
-    <div className="w-full bg-white shadow-md">
+    <div className="w-full bg-white">
       <ScrollArea className="w-full whitespace-nowrap">
         <div className="flex p-2">
           {menuItems.map((item) => (
