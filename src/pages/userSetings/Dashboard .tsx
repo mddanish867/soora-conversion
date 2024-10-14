@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   History,
   User,
@@ -17,60 +19,23 @@ import {
   MessageCircleIcon,
 } from "lucide-react";
 
-const Sidebar = ({
-  isOpen,
-  toggleSidebar,
-}: {
-  isOpen: boolean;
-  toggleSidebar: () => void;
-}) => {
+const menuItems = [
+  { icon: User, name: "Profile", path: "/dashboard/profile" },
+  { icon: History, name: "History", path: "/dashboard/history" },
+  { icon: Bell, name: "Notifications", path: "/dashboard/notifications" },
+  { icon: Shield, name: "Security", path: "/dashboard/security" },
+  { icon: FileText, name: "Conversion Status", path: "/dashboard/conversion-status" },
+  { icon: Layers, name: "Batch Conversion", path: "/dashboard/batch-conversion" },
+  { icon: GitCompare, name: "File Comparison", path: "/dashboard/file-comparison" },
+  { icon: Star, name: "Premium Features", path: "/dashboard/premium-features" },
+  { icon: MessageCircleIcon, name: "Document Interaction", path: "/dashboard/document-interaction" },
+  { icon: Star, name: "Document Comment", path: "/dashboard/document-comment" },
+  { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
+];
+
+const Sidebar = ({ isOpen, toggleSidebar }:any) => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const menuItems = [
-    { icon: User, name: "Profile", path: "/dashboard/profile" },
-    { icon: History, name: "History", path: "/dashboard/history" },
-    { icon: Bell, name: "Notifications", path: "/dashboard/notifications" },
-    { icon: Shield, name: "Security", path: "/dashboard/security" },
-    {
-      icon: FileText,
-      name: "Conversion Status",
-      path: "/dashboard/conversion-status",
-    },
-    {
-      icon: Layers,
-      name: "Batch Conversion",
-      path: "/dashboard/batch-conversion",
-    },
-    {
-      icon: GitCompare,
-      name: "File Comparison",
-      path: "/dashboard/file-comparison",
-    },
-    {
-      icon: Star,
-      name: "Premium Features",
-      path: "/dashboard/premium-features",
-    },
-    {
-      icon: MessageCircleIcon,
-      name: "Document Interaction",
-      path: "/dashboard/document-interaction",
-    },
-    {
-      icon: Star,
-      name: "Document Comment",
-      path: "/dashboard/document-comment",
-    },
-    { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
-  ];
-
-  // Default to the Profile path if the current location is the root dashboard
-  useEffect(() => {
-    if (location.pathname === '/dashboard') {
-      navigate('/dashboard/profile');
-    }
-  }, [location.pathname, navigate]);
 
   return (
     <motion.div
@@ -113,9 +78,33 @@ const Sidebar = ({
   );
 };
 
+const TabNavigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  return (
+    <Tabs defaultValue={location.pathname} className="w-full">
+      <TabsList className="grid grid-cols-3 gap-2">
+        {menuItems.map((item) => (
+          <TabsTrigger
+            key={item.name}
+            value={item.path}
+            onClick={() => navigate(item.path)}
+            className="flex items-center justify-center"
+          >
+            <item.icon className="h-4 w-4 mr-2" />
+            <span className="sr-only">{item.name}</span>
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    </Tabs>
+  );
+};
+
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const isSmallScreen = useMediaQuery({ maxWidth: 640 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -134,10 +123,12 @@ const Dashboard = () => {
 
   return (
     <div className="flex w-screen h-screen bg-white">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      {!isSmallScreen && (
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      )}
       <div className="w-full">
         <header className="bg-white">
-          
+          {!isSmallScreen && (
             <Button
               variant="ghost"
               size="icon"
@@ -146,9 +137,10 @@ const Dashboard = () => {
             >
               {!sidebarOpen && <Menu />}
             </Button>
-         
+          )}
         </header>
-        <main className="flex overflow-x-hidden overflow-y-auto bg-white">
+        <main className="flex flex-col overflow-x-hidden overflow-y-auto bg-white">
+          {isSmallScreen && <TabNavigation />}
           <div className="w-full h-full px-8 py-4">
             <Outlet />
           </div>
