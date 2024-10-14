@@ -49,7 +49,11 @@ const Navbar = () => {
   const handleDashboard = () => {
     navigate("/dashboard")
   }
+  const handleProfile = () => {
+    navigate("/dashboard/profile")
+  }
 
+  
   return (
     <nav className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,7 +146,7 @@ const Navbar = () => {
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={handleProfile}>
                     <User className="mr-2 h-4 w-4" />
                     <span>Profile</span>
                   </DropdownMenuItem>

@@ -49,7 +49,7 @@ const DocumentCommentSystem = () => {
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-lg"
+        className="bg-white p-8 rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

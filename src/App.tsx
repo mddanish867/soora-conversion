@@ -12,6 +12,12 @@ import SecuritySettingsPage from './pages/userSetings/SecuritySettingsPage ';
 import ProfileSettingsPage from './pages/userSetings/ProfileSettingsPage ';
 import NotificationSettingsPage from './pages/userSetings/NotificationSettingsPage ';
 import DeleteAccountPage from './pages/userSetings/DeleteAccountPage ';
+import BatchConversionComponent from './pages/conversions/BatchConversionComponent ';
+import ConversionStatusPage from './pages/conversions/ConversionStatusPage';
+import FileComparisonTool from './pages/conversions/FileComparisonTool ';
+import PremiumFeaturesShowcase from './pages/conversions/PremiumFeaturesShowcase ';
+import AIDocumentInteraction from './pages/documents/AIDocumentInteraction ';
+import DocumentCommentSystem from './pages/documents/DocumentCommentSystem ';
 
 function App() {
   return (
@@ -22,12 +28,21 @@ function App() {
           {/* Define nested routes here */}
           <Route path="/" element={<LandingPage />} />        
           <Route path="/upload" element={<FileUploadPage />} />        
-          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/history" element={<UserHistoryPage />} />        
           <Route path="/dashboard/security" element={<SecuritySettingsPage />} />        
-          <Route path="/dashboard/profile" element={<ProfileSettingsPage />} />        
+          <Route path="/dashboard/profile" element={<ProfileSettingsPage />} /> 
           <Route path="/dashboard/notifications" element={<NotificationSettingsPage />} />        
           <Route path="/dashboard/delete-account" element={<DeleteAccountPage />} />        
+          <Route path="/dashboard/batch-conversion" element={<BatchConversionComponent />} />        
+          <Route path="/dashboard/conversion-status" element={<ConversionStatusPage />} />        
+          <Route path="/dashboard/file-comparison" element={<FileComparisonTool />} />        
+          <Route path="/dashboard/premium-features" element={<PremiumFeaturesShowcase />} />        
+          <Route path="/dashboard/document-interaction" element={<AIDocumentInteraction />} />        
+          <Route path="/dashboard/document-comment" element={<DocumentCommentSystem />} />        
+        </Route>
+                 
+         
 
         </Route>
         <Route path="/login" element={<LoginPage />} />
