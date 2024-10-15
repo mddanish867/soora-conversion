@@ -38,7 +38,7 @@ const FileComparisonTool = () => {
   }
 
   return (
-    <div className="w-full sm:px-4">
+    <div className="w-full min-h-screen px-2 sm:px-4">
       <motion.div
         className="bg-white  sm:p-8 rounded-lg w-full min-h-screen"
         initial={{ opacity: 0, y: -50 }}

@@ -64,7 +64,7 @@ const AIDocumentInteraction = () => {
   }
 
   return (
-    <div className="container w-full mx-auto px-2 lg:px-4">
+    <div className="w-full mx-auto px-2 lg:px-4">
       <motion.div
         className="bg-white p-6 rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -50 }}
