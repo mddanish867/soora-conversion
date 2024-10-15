@@ -15,9 +15,9 @@ const PremiumFeaturesShowcase = () => {
   ]
 
   return (
-    <div className="w-full"> 
+    <div className="container w-full px-4 sm:py-10"> 
       <motion.div
-        className="bg-white rounded-lg"
+        className="bg-transparent rounded-lg"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

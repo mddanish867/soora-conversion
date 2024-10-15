@@ -38,7 +38,7 @@ const BatchConversionComponent = () => {
   return (
     <div className="w-full min-h-screen px-2 sm:px-4 md:px-6 lg:px-8">
       <motion.div
-        className="bg-white p-4 sm:p-6 md:p-8 rounded-lg w-full min-h-screen"
+        className="bg-transparent p-4 sm:p-6 md:p-8 rounded-lg w-full min-h-screen"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

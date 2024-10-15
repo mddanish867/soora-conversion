@@ -66,7 +66,7 @@ const AIDocumentInteraction = () => {
   return (
     <div className="w-full mx-auto px-2 lg:px-4">
       <motion.div
-        className="bg-white p-6 rounded-lg shadow-sm"
+        className="bg-transparent py-10 rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
