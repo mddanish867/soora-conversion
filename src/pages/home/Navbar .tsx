@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -25,26 +23,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const conversionOptions = [
-    {
-      title: "Word to PDF",
-      description: "Convert Word documents to PDF format",
-    },
-    {
-      title: "PDF to Word",
-      description: "Convert PDF files to editable Word documents",
-    },
-    { title: "Image to PDF", description: "Convert images to PDF files" },
-    { title: "PDF to Image", description: "Extract images from PDF files" },
-    {
-      title: "Excel to PDF",
-      description: "Convert Excel spreadsheets to PDF format",
-    },
-    {
-      title: "PDF to Excel",
-      description: "Convert PDF files to editable Excel spreadsheets",
-    },
-  ];
 
   const handleDashboard = () => {
     navigate("/dashboard")
@@ -67,7 +45,9 @@ const Navbar = () => {
   const handleChatDoc = () => {
     navigate("/document-interaction")
   }
-
+  const handleConversionService = () => {
+    navigate("/conversion-service")
+  }
   
   
   return (
@@ -77,38 +57,19 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
               <span className="text-gray-900 text-2xl font-bold">
-                FileConverter
+                Soora<span className="text-sm text-yellow-200 bg-pink-400 rounded-md p-1">Converter</span>
               </span>
             </Link>
             <div className="hidden md:block ml-10">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-gray-900 hover:text-gray-600">
+                    <NavigationMenuTrigger
+                    onClick={handleConversionService}
+                    className="text-gray-900 hover:text-gray-600">
                       Convert
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {conversionOptions.map((option) => (
-                          <li key={option.title}>
-                            <NavigationMenuLink asChild>
-                              <a
-                                href="#"
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                              >
-                                <div className="text-sm font-medium leading-none">
-                                  {option.title}
-                                </div>
-                                <p className="line-clamp-2 text-sm leading-snug text-gray-600">
-                                  {option.description}
-                                </p>
-                              </a>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                       
-                      </ul>
-                    </NavigationMenuContent>
+                    
                   </NavigationMenuItem>
                 </NavigationMenuList>
                 <NavigationMenuList>
@@ -272,7 +233,7 @@ const Navbar = () => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
-              to="#"
+              to="/conversion-service"
               className="text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
             >
               Convert

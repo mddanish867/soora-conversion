@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/pages/home/Navbar ";
 import { Outlet } from "react-router-dom";
+import Footer from "@/pages/home/Footer ";
 
 const Layout = () => {
   return (
@@ -33,6 +34,7 @@ const Layout = () => {
       <Navbar />
       {/* Main content */}
       <main className="relative z-10"><Outlet/></main>
+      <Footer/>
     </div>
   );
 };

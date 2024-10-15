@@ -18,6 +18,7 @@ import FileComparisonTool from './pages/conversions/FileComparisonTool ';
 import PremiumFeaturesShowcase from './pages/conversions/PremiumFeaturesShowcase ';
 import AIDocumentInteraction from './pages/documents/AIDocumentInteraction ';
 import DocumentCommentSystem from './pages/documents/DocumentCommentSystem ';
+import ConversionServicesPage from './pages/conversions/ConversionServicesPage ';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/file-comparison" element={<FileComparisonTool />} />        
           <Route path="/premium-features" element={<PremiumFeaturesShowcase />} />        
           <Route path="/document-interaction" element={<AIDocumentInteraction />} />        
+          <Route path="/conversion-service" element={<ConversionServicesPage />} />        
 
           <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/history" element={<UserHistoryPage />} />        
