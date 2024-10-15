@@ -40,18 +40,18 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-gray-950 tracking-wider uppercase">Solutions</h3>
                 <ul className="mt-4 space-y-4">
                   <li>
-                    <Link to="#" className="text-base text-gray-500 hover:text-gray-900">
-                      About
+                    <Link to="/conversion-service" className="text-base text-gray-500 hover:text-gray-900">
+                      Services
                     </Link>
                   </li>
                   <li>
-                    <Link to="#" className="text-base text-gray-500 hover:text-gray-900">
-                      Contact us
+                    <Link to="/batch-conversio" className="text-base text-gray-500 hover:text-gray-900">
+                      Batch Conversion
                     </Link>
                   </li>
                   <li>
-                    <Link to="#" className="text-base text-gray-500 hover:text-gray-900">
-                      help
+                    <Link to="/file-comparison" className="text-base text-gray-500 hover:text-gray-900">
+                      File Comparison
                     </Link>
                   </li>
                 </ul>
@@ -72,6 +72,11 @@ const Footer = () => {
                   <li>
                     <a href="#" className="text-base text-gray-500 hover:text-gray-900">
                       Guides
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-base text-gray-500 hover:text-gray-900">
+                      Helps
                     </a>
                   </li>
                 </ul>
