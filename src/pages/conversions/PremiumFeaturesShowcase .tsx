@@ -22,7 +22,7 @@ const PremiumFeaturesShowcase = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Premium Features</h2>
+        <h2 className="text-3xl font-bold mb-6 text-blue-800 text-center">Premium Features</h2>
         <p className="text-center text-gray-600 mb-8">Unlock advanced capabilities with our premium plan</p>
         
         {/* Adjust the grid for small devices */}

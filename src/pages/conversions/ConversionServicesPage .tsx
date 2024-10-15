@@ -63,7 +63,7 @@ const ConversionServicesPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mb-6 text-gray-950">Conversion Services</h1>
+        <h1 className="text-3xl font-bold mb-10 text-blue-800 text-center">Conversion Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {conversionServices.map((service, index) => (
             <motion.div

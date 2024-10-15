@@ -85,11 +85,11 @@ const AIDocumentInteraction = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold mb-6 text-blue-800">
+        <h2 className="text-center text-3xl font-bold mb-10 text-blue-800">
           Start chatting with your document with AI.
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-          <Card className="lg:col-span-2 w-full overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="lg:col-span-2 w-full overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-blue-800">
                 Document Viewer & Chat

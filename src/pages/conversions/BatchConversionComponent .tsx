@@ -43,7 +43,7 @@ const BatchConversionComponent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900">Batch Conversion</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-800">Batch Conversion</h2>
         <div className="space-y-4 sm:space-y-6">
           <div>
             <Label htmlFor="file-upload">Upload Files</Label>

@@ -45,7 +45,7 @@ const FileComparisonTool = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">File Comparison Tool</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-blue-800">File Comparison Tool</h2>
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
