@@ -44,7 +44,7 @@ const LandingPage = () => {
         </Link>
       </motion.div>
 {/* Styles for the grid background */}
-      <style jsx>{`
+      <style>{`
         .grid-pattern {
           width: 100%;
           height: 100%;
