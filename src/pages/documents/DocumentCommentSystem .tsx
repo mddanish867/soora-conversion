@@ -47,7 +47,7 @@ const DocumentCommentSystem = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 w-full">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
       <motion.div
         className="bg-white p-8 rounded-lg shadow-sm w-full"
         initial={{ opacity: 0, y: -50 }}
