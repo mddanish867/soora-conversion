@@ -53,6 +53,22 @@ const Navbar = () => {
     navigate("/dashboard/profile")
   }
 
+  const handleBatchConversion = () => {
+    navigate("/batch-conversion")
+  }
+  
+  const handleFileComparison = () => {
+    navigate("/file-comparison")
+  }
+  
+  const handlePremium = () => {
+    navigate("/premium-features")
+  }
+  const handleChatDoc = () => {
+    navigate("/document-interaction")
+  }
+
+  
   
   return (
     <nav className="bg-white border-b border-gray-200">
@@ -90,8 +106,49 @@ const Navbar = () => {
                             </NavigationMenuLink>
                           </li>
                         ))}
+                       
                       </ul>
                     </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger
+                    onClick={handleBatchConversion}
+                    className="text-gray-900 hover:text-gray-600">
+                      Batch Conversion
+                    </NavigationMenuTrigger>
+                   
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger
+                    onClick={handleFileComparison}
+                    className="text-gray-900 hover:text-gray-600">
+                      File Comparison
+                    </NavigationMenuTrigger>
+                   
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger
+                    onClick={handlePremium}
+                    className="text-gray-900 hover:text-gray-600">
+                      Premium Features
+                    </NavigationMenuTrigger>
+                   
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger
+                    onClick={handleChatDoc}
+                     className="text-gray-900 hover:text-gray-600">
+                      Chat with Document
+                    </NavigationMenuTrigger>
+                   
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
@@ -221,10 +278,28 @@ const Navbar = () => {
               Convert
             </Link>
             <Link
-              to="/dashboard"
+              to="/batch-conversion"
               className="text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
             >
-              Dashboard
+              Batch Converison
+            </Link>
+            <Link
+              to="/file-comparison"
+              className="text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              File Comparison
+            </Link>
+            <Link
+              to="/premium-features"
+              className="text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Premium Feature
+            </Link>
+            <Link
+              to="/document-interaction"
+              className="text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Chat with Document
             </Link>
             <Link
               to="/login"

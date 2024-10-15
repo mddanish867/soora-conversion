@@ -12,11 +12,8 @@ import {
   Trash2,
   Menu,
   X,
-  FileText,
-  Layers,
-  GitCompare,
+  FileText,  
   Star,
-  MessageCircleIcon,
 } from "lucide-react";
 
 const menuItems = [
@@ -25,10 +22,6 @@ const menuItems = [
   { icon: Bell, name: "Notifications", path: "/dashboard/notifications" },
   { icon: Shield, name: "Security", path: "/dashboard/security" },
   { icon: FileText, name: "Conversion Status", path: "/dashboard/conversion-status" },
-  { icon: Layers, name: "Batch Conversion", path: "/dashboard/batch-conversion" },
-  { icon: GitCompare, name: "File Comparison", path: "/dashboard/file-comparison" },
-  { icon: Star, name: "Premium Features", path: "/dashboard/premium-features" },
-  { icon: MessageCircleIcon, name: "Document Interaction", path: "/dashboard/document-interaction" },
   { icon: Star, name: "Document Comment", path: "/dashboard/document-comment" },
   { icon: Trash2, name: "Delete Account", path: "/dashboard/delete-account" },
 ];

@@ -33,7 +33,7 @@ const LandingPage = () => {
             Get started
           </Button>
         </Link>
-        <Link to="/register">
+        <Link to="#">
           <Button variant="link" size="lg">
             Learn More <ArrowRight />
           </Button>

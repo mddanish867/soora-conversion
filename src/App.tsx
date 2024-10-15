@@ -27,18 +27,19 @@ function App() {
         <Route element={<Layout/>}>
           {/* Define nested routes here */}
           <Route path="/" element={<LandingPage />} />        
-          <Route path="/upload" element={<FileUploadPage />} />        
+          <Route path="/upload" element={<FileUploadPage />} />   
+          <Route path="/batch-conversion" element={<BatchConversionComponent />} />        
+          <Route path="/file-comparison" element={<FileComparisonTool />} />        
+          <Route path="/premium-features" element={<PremiumFeaturesShowcase />} />        
+          <Route path="/document-interaction" element={<AIDocumentInteraction />} />        
+
           <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/history" element={<UserHistoryPage />} />        
           <Route path="/dashboard/security" element={<SecuritySettingsPage />} />        
           <Route path="/dashboard/profile" element={<ProfileSettingsPage />} /> 
           <Route path="/dashboard/notifications" element={<NotificationSettingsPage />} />        
           <Route path="/dashboard/delete-account" element={<DeleteAccountPage />} />        
-          <Route path="/dashboard/batch-conversion" element={<BatchConversionComponent />} />        
           <Route path="/dashboard/conversion-status" element={<ConversionStatusPage />} />        
-          <Route path="/dashboard/file-comparison" element={<FileComparisonTool />} />        
-          <Route path="/dashboard/premium-features" element={<PremiumFeaturesShowcase />} />        
-          <Route path="/dashboard/document-interaction" element={<AIDocumentInteraction />} />        
           <Route path="/dashboard/document-comment" element={<DocumentCommentSystem />} />        
         </Route>
                  
