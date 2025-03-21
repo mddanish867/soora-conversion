@@ -124,7 +124,7 @@ const Navbar = () => {
          )}
           
            {/* UserDropdown */}
-           <UserDropdown />
+           {user && (<UserDropdown />)}
           <div className="md:hidden flex justify-end">
   <button
     onClick={() => setIsOpen(!isOpen)}
