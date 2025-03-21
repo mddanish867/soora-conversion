@@ -1,3 +1,4 @@
+import { AuthProvider } from './context/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/home/LandingPage ';
 import Layout from './layout/Layout';
@@ -22,7 +23,8 @@ import ConversionServicesPage from './pages/conversions/ConversionServicesPage '
 
 function App() {
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
       <Routes>
         {/* Define a route for the layout and nest the about route */}
         <Route element={<Layout/>}>
@@ -55,6 +57,7 @@ function App() {
 
       </Routes>
     </Router>
+    </AuthProvider>
   );
 }
 

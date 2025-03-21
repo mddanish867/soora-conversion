@@ -2,9 +2,17 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {Link} from 'react-router-dom'
-import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa'
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 
 const LoginPage = () => {
+
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:3000/api/auth/google';
+  };
+
+  
+  
+  
   return (
     <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen">
       <motion.div
@@ -54,15 +62,16 @@ const LoginPage = () => {
         <div className="mt-6">
           <p className="text-center mb-4 text-gray-600">Or login with</p>
           <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="icon" className="bg-red-500 hover:bg-red-600 text-white">
-              <FaGoogle className="w-4 h-4" />
+            <Button 
+            onClick={handleGoogleLogin}
+            variant="outline" size="icon" className="bg-red-500 hover:bg-red-600 text-white">
+              
+            <FaGoogle className="w-4 h-4" />
             </Button>
-            <Button variant="outline" size="icon" className="bg-blue-500 hover:bg-blue-600 text-white">
-              <FaFacebook className="w-4 h-4" />
+            <Button variant="outline" size="icon" className="bg-gray-900 hover:bg-gray-950 text-white">
+              <FaGithub className="w-4 h-4" />
             </Button>
-            <Button variant="outline" size="icon" className="bg-sky-400 hover:bg-sky-500 text-white">
-              <FaTwitter className="w-4 h-4" />
-            </Button>
+           
           </div>
         </div>
         <div className="mt-6 text-center">
