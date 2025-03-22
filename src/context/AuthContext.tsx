@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setAccessToken(null);
       localStorage.removeItem('accessToken');
       localStorage.removeItem('user');
-      document.cookie = 'accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie = 'access_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } catch (error) {
       console.error('Logout failed:', error);
     } finally {

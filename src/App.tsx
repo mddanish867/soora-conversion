@@ -1,4 +1,5 @@
 import { AuthProvider } from './context/AuthContext';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/home/LandingPage ';
 import Layout from './layout/Layout';
@@ -21,15 +22,18 @@ import AIDocumentInteraction from './pages/documents/AIDocumentInteraction ';
 import DocumentCommentSystem from './pages/documents/DocumentCommentSystem ';
 import ConversionServicesPage from './pages/conversions/ConversionServicesPage ';
 
+const queryClient = new QueryClient();
 function App() {
   return (
-    <AuthProvider>
+    <QueryClientProvider client={queryClient}>
+       
       <Router>
+      <AuthProvider>
       <Routes>
         {/* Define a route for the layout and nest the about route */}
         <Route element={<Layout/>}>
           {/* Define nested routes here */}
-          <Route path="/" element={<LandingPage />} />        
+          <Route path="/" element={<LandingPage />} />      
           <Route path="/upload" element={<FileUploadPage />} />   
           <Route path="/batch-conversion" element={<BatchConversionComponent />} />        
           <Route path="/file-comparison" element={<FileComparisonTool />} />        
@@ -56,8 +60,13 @@ function App() {
           <Route path="/reset-password" element={<ResetPasswordPage />} />
 
       </Routes>
+      </AuthProvider>
     </Router>
-    </AuthProvider>
+
+
+    
+      </QueryClientProvider>
+   
   );
 }
 
