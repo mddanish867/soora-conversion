@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Link} from 'react-router-dom'
-import { FaGithub } from 'react-icons/fa'
 import GoogleLogin from './GoogleLogin'
+import GithubLogin from './GithubLogin'
 
 const LoginPage = () => {
 
@@ -62,18 +62,9 @@ const LoginPage = () => {
         </form>
         <div className="mt-6">
           <p className="text-center mb-4 text-gray-600">Or login with</p>
-          <div className="flex justify-center space-x-4">
-            {/* <Button 
-            onClick={handleGoogleLogin}
-            variant="outline" size="icon" className="bg-red-500 hover:bg-red-600 text-white">
-              
-            <FaGoogle className="w-4 h-4" />
-            </Button> */}
+          <div className="flex justify-center space-x-4">          
             <GoogleLogin/>
-            <Button variant="outline" size="icon" className="bg-gray-900 hover:bg-gray-950 hover:text-white text-white">
-              <FaGithub className="w-4 h-4" />
-            </Button>
-           
+            <GithubLogin/>           
           </div>
         </div>
         <div className="mt-6 text-center">

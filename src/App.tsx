@@ -1,4 +1,4 @@
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/AuthProvider'; // Import the provider
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/home/LandingPage ';
@@ -21,6 +21,7 @@ import PremiumFeaturesShowcase from './pages/conversions/PremiumFeaturesShowcase
 import AIDocumentInteraction from './pages/documents/AIDocumentInteraction ';
 import DocumentCommentSystem from './pages/documents/DocumentCommentSystem ';
 import ConversionServicesPage from './pages/conversions/ConversionServicesPage ';
+import Callback from './pages/auth/CallBack';
 
 const queryClient = new QueryClient();
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route element={<Layout/>}>
           {/* Define nested routes here */}
           <Route path="/" element={<LandingPage />} />      
+          <Route path="/callback" element={<Callback />} />
           <Route path="/upload" element={<FileUploadPage />} />   
           <Route path="/batch-conversion" element={<BatchConversionComponent />} />        
           <Route path="/file-comparison" element={<FileComparisonTool />} />        
